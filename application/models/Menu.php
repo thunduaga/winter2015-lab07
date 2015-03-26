@@ -44,5 +44,26 @@ class Menu extends CI_Model {
         else
             return null;
     }
+    // retrieve a cheese record
+    function getCheese($code) {
+        if (isset($this->cheeses[$code]))
+            return $this->cheeses[$code];
+        else
+            return null;
+    }
+    // retrieve a sauce record
+    function getSauce($code) {
+        if (isset($this->sauces[$code]))
+            return $this->sauces[$code];
+        else
+            return null;
+    }
+    // retrieve a topping record
+    function getTopping($code) {
+        if (isset($this->toppings[$code]))
+            return $this->toppings[$code];
+        else
+            return null;
+    }
 
 }
