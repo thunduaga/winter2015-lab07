@@ -24,6 +24,7 @@ class Welcome extends Application {
         // 
         //Load directory helper
 	$this->load->helper('directory');
+        $this->load->model('Order');
         
         $orders = directory_map(DATAPATH);//./data
         $ordersArray = array();
@@ -33,6 +34,7 @@ class Welcome extends Application {
             if(substr_compare($order, "order", 0, 5) == 0)
             {
                 $singleOrder["filename"] = $order;
+                $singleOrder["customer"] = $this->Order->getName($order);
                 $ordersArray[] = $singleOrder;
             }
         }

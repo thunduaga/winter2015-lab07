@@ -12,7 +12,12 @@ class Order extends CI_Model {
     public function __construct(){
         parent::__construct();
     }
-    
+    public function getName($xmlFile)
+    {
+        $xml = simplexml_load_file(DATAPATH . $xmlFile);  
+        $customer = (String)$xml->customer;
+        return $customer;
+    }
     public function getOrder($xmlFile)
     {
        $xml = simplexml_load_file(DATAPATH . $xmlFile);  
