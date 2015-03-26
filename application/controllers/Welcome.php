@@ -70,7 +70,7 @@ class Welcome extends Application {
         $this->data['ordertype'] = $order['ordertype'];
         $this->data['special'] = $order['special'];
         $this->data['burgers'] = $order['burgerArray'];
-       
+        $this->data['total'] = $order['total'];
         // Present the list to choose from
 	$this->data['pagebody'] = 'justone';
 	$this->render();
