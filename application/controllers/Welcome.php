@@ -21,7 +21,24 @@ class Welcome extends Application {
     function index()
     {
 	// Build a list of orders
-	
+        // 
+        //Load directory helper
+	$this->load->helper('directory');
+        
+        $orders = directory_map(DATAPATH);//./data
+        $ordersArray = array();
+
+        foreach($orders as $order)
+        {
+            if(substr_compare($order, "order", 0, 5) == 0)
+            {
+                $singleOrder["filename"] = $order;
+                $ordersArray[] = $singleOrder;
+            }
+        }
+
+        $this->data['orders'] = $ordersArray;
+
 	// Present the list to choose from
 	$this->data['pagebody'] = 'homepage';
 	$this->render();
@@ -36,6 +53,9 @@ class Welcome extends Application {
 	// Build a receipt for the chosen order
 	
 	// Present the list to choose from
+        // Build a receipt for
+      
+        // Present the list to choose from
 	$this->data['pagebody'] = 'justone';
 	$this->render();
     }
