@@ -26,7 +26,9 @@
             <br>
             Name: {name}
             <br>
+            <h6>Subtotal: ${subtotal}</h6>
             <br>
             {/burgers}
+            <h4>Total: ${total}</h4>   
     </div>
 </div>
