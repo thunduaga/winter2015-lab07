@@ -1,3 +1,6 @@
 <div class="row">
-    Burger Bonanza?
+    Orders:
+    {orders}
+        <p><a href='/welcome/order/{filename}'>{filename}</a></p>
+    {/orders}
 </div>
