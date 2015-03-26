@@ -55,6 +55,20 @@ class Welcome extends Application {
 	// Present the list to choose from
         // Build a receipt for
       
+        $this->load->model('Order');
+        $this->load->model('Menu');
+        $this->load->library('parser');
+
+        $order = $this->Order->getOrder($filename);
+
+        $this->data['pagebody'] = 'justone';
+        
+        $this->data['filename'] = $filename;
+        $this->data['customer'] = $order['customer'];
+        $this->data['ordertype'] = $order['ordertype'];
+        $this->data['special'] = $order['special'];
+        $this->data['burgers'] = $order['burgerArray'];
+       
         // Present the list to choose from
 	$this->data['pagebody'] = 'justone';
 	$this->render();
